@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Flexbox Pricing Table</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Handlee&family=Noto+Sans+JP:wght@100..900&family=Patrick+Hand&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+    <style>
+      body {
+        font-family: "Handlee", cursive;
+        background: linear-gradient(180deg, rgb(189, 206, 220) 30% , rgb(45, 66, 85) 100%);
+      }
+
+      .pricing-container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 5rem;
+        width: 100vw;
+        height: 100vh;
+      }
+
+      .pricing-plan{
+        border-radius: 5%;
+        flex-basis: 300px;
+        height: 400px;
+        box-shadow: 18px 20px 10px 4px;
+        background-color: rgb(206, 218, 230);
+        display: flex;
+        flex-direction: column ;
+        justify-content: center;
+        transition: transform .2s;
+      }
+
+      .pricing-plan:hover{
+        transform: scale(1.1);
+      }
+
+      .plan-title{
+        margin:  0;
+        padding: 2rem;
+        text-align: center;
+        font-weight: bold ;
+        font-size: 2rem;
+        border-top-right-radius: 5%;
+        border-top-left-radius: 5%;
+        box-shadow: 1px 10px 5px 0px #01010129;
+      }
+
+      .plan-price{
+        text-align: center;
+        padding: 1rem;
+        display: flex;
+        justify-content: center;
+      }
+
+      .dollar{
+        font-size: 2.5rem;
+        align-self: flex-start;
+        font-weight: lighter !important;
+      }
+      
+      .price{
+        font-size: 4rem;
+      }
+
+      .month{
+        font-size: 1rem;
+        align-self: flex-end;
+      }
+
+      li{
+        display: flex;
+      }
+
+      svg{
+        margin: 0 1rem;
+      }
+
+      button{
+        padding: 1rem 1.2rem;
+        margin: 0 auto 2rem;
+        border-radius: 15%;
+        font-weight: bold;
+        font-size: 1rem;
+        border: none;
+      }
+      
+      button:hover{
+        box-shadow: 5px 5px 10px 0px;
+      }
+
+      .basic .plan-title{
+        background: linear-gradient(30deg,  rgb(17, 44, 59) 0%, rgb(58, 112, 91) 50% ,rgba(252,176,69,1) 100%);
+      }
+
+      .standard .plan-title{
+        background: linear-gradient(60deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+      }
+
+      .premium .plan-title{
+        background: linear-gradient(30deg,  rgb(150, 179, 226) 0%, rgb(53, 124, 128) 50% ,rgb(6, 23, 67) 100%);
+      }
+
+      .basic > button{
+        background: linear-gradient(30deg,  rgb(17, 44, 59) 0%, rgb(58, 112, 91) 50% ,rgba(252,176,69,1) 100%);
+        box-shadow: 0px px 10px 10px;
+      }
+
+      .standard > button{
+        background: linear-gradient(60deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+      }
+
+      .premium > button{
+        background: linear-gradient(30deg,  rgb(150, 179, 226) 0%, rgb(53, 124, 128) 50% ,rgb(6, 23, 67) 100%);
+      }
+      
+
+      /* Hint: What can you do with a media query and flexbox? */
+      @media (max-width: 1250px) {
+        .pricing-container{
+          display: flex;
+          flex-direction: column;
+          justify-content: space-evenly;
+          align-items: center;
+          gap: 3rem;
+        }
+
+        .pricing-plan{
+          flex-basis: 400px;
+          width: 300px;
+          height: fit-content;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="pricing-container">
+
+      <div class="pricing-plan basic">
+        <div class="plan-title">Basic</div>
+        <div class="plan-price">
+          <span class="dollar">$</span>
+          <span class="price">9.99</span>
+          <span class="month">/month</span>
+        </div>
+        <ul class="plan-features">
+          <li>
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#48752C"><path d="m382-393 321-321q20.09-20 48.55-20Q780-734 800-714.21q20 19.79 20 48.5T800-617L430-248q-19.82 20-47.91 20Q354-228 334-248L161-420q-20-20.73-20-48.87Q141-497 160.79-517q20.79-21 49-21T258-517l124 124Z"/></svg> 
+            10GB Storage
+          </li>
+          <li> 
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#48752C"><path d="m382-393 321-321q20.09-20 48.55-20Q780-734 800-714.21q20 19.79 20 48.5T800-617L430-248q-19.82 20-47.91 20Q354-228 334-248L161-420q-20-20.73-20-48.87Q141-497 160.79-517q20.79-21 49-21T258-517l124 124Z"/></svg> 
+            1 User
+          </li>
+          <li>
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#BB271A"><path d="M480-385 302-207q-20 20-48 20t-47-20q-20-20-20-47.5t20-47.5l178-178-178-179q-20-20-20-47.5t20-47.5q19-20 47-20t48 20l178 178 178-178q20-20 48-20t47 20q20 20 20 47.5T753-659L575-480l178 178q20 20 20 47.5T753-207q-19 20-47 20t-48-20L480-385Z"/></svg>
+             Support
+          </li>
+        </ul>
+        <button class="plan-button">Sign Up</button>
+      </div>
+
+      <div class="pricing-plan standard">
+        <div class="plan-title">Standard</div>
+        <div class="plan-price">
+          <span class="dollar">$</span>
+          <span class="price">19.99</span>
+          <span class="month">/month</span>
+        </div>
+        <ul class="plan-features">
+          <li>
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#48752C"><path d="m382-393 321-321q20.09-20 48.55-20Q780-734 800-714.21q20 19.79 20 48.5T800-617L430-248q-19.82 20-47.91 20Q354-228 334-248L161-420q-20-20.73-20-48.87Q141-497 160.79-517q20.79-21 49-21T258-517l124 124Z"/></svg> 
+            50GB Storage
+          </li>
+          <li> <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#48752C"><path d="m382-393 321-321q20.09-20 48.55-20Q780-734 800-714.21q20 19.79 20 48.5T800-617L430-248q-19.82 20-47.91 20Q354-228 334-248L161-420q-20-20.73-20-48.87Q141-497 160.79-517q20.79-21 49-21T258-517l124 124Z"/></svg> 
+            5 Users
+          </li>
+          <li> <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#48752C"><path d="m382-393 321-321q20.09-20 48.55-20Q780-734 800-714.21q20 19.79 20 48.5T800-617L430-248q-19.82 20-47.91 20Q354-228 334-248L161-420q-20-20.73-20-48.87Q141-497 160.79-517q20.79-21 49-21T258-517l124 124Z"/></svg> 
+            Phone &amp; Email Support
+          </li>
+        </ul>
+        <button class="plan-button">Sign Up</button>
+      </div>
+
+      <div class="pricing-plan premium">
+        <div class="plan-title">Premium</div>
+        <div class="plan-price">
+          <span class="dollar">$</span>
+          <span class="price">49.99</span>
+          <span class="month">/month</span>
+        </div>
+        <ul class="plan-features">
+          <li>
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#48752C"><path d="m382-393 321-321q20.09-20 48.55-20Q780-734 800-714.21q20 19.79 20 48.5T800-617L430-248q-19.82 20-47.91 20Q354-228 334-248L161-420q-20-20.73-20-48.87Q141-497 160.79-517q20.79-21 49-21T258-517l124 124Z"/></svg> 
+            100GB Storage
+          </li>
+          <li>
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#48752C"><path d="m382-393 321-321q20.09-20 48.55-20Q780-734 800-714.21q20 19.79 20 48.5T800-617L430-248q-19.82 20-47.91 20Q354-228 334-248L161-420q-20-20.73-20-48.87Q141-497 160.79-517q20.79-21 49-21T258-517l124 124Z"/></svg> 
+            10 Users
+          </li>
+          <li>
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#48752C"><path d="m382-393 321-321q20.09-20 48.55-20Q780-734 800-714.21q20 19.79 20 48.5T800-617L430-248q-19.82 20-47.91 20Q354-228 334-248L161-420q-20-20.73-20-48.87Q141-497 160.79-517q20.79-21 49-21T258-517l124 124Z"/></svg> 
+            24/7 Support
+          </li>
+        </ul>
+        <button class="plan-button">Sign Up</button>
+      </div>
+    </div>
+  </body>
+</html>
